@@ -1,0 +1,10 @@
+ .btnHoverAnimation {
+    transition: transform .3s, opacity .3s;
+    transform: scale(1);
+    opacity: 1;
+
+    &:hover {
+       transform: scale(1.1);
+       opacity: .8;
+    }
+ }

@@ -1,0 +1,8 @@
+:root {
+    --iImgUploaderBlack: rgba(0, 0, 0, .77);
+    --iImgUploaderWhite: white;
+    --iImgUploaderGray: rgba(141, 139, 139, .5);
+    --iImgUploaderLightGray: rgba(248, 244, 244, .5);
+    --iImgUploaderOverlay: rgba(0, 0, 0, .4);
+    --iImgUploaderDanger: #dc2626;
+}
