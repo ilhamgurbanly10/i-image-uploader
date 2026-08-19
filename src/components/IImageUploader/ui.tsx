@@ -97,11 +97,13 @@ const UI: React.FC<Props> = ({ data, options, translates, rules, className = "" 
                     onChange={handleImageChange}
                 />
 
-                <div id={`${id}_error`} className={styles.errorContainer} role="alert">
-                    { data.errors.required && <p className={styles.error} dangerouslySetInnerHTML={{ __html: allRules.requirement.mes }} />}
-                    { data.errors.min && <p className={styles.error} dangerouslySetInnerHTML={{ __html: allRules.min.mes }} />}
-                    { data.errors.max && <p className={styles.error} dangerouslySetInnerHTML={{ __html: allRules.max.mes }} />}
-                </div>
+                {data.errors.hasError &&
+                    <div id={`${id}_error`} className={styles.errorContainer} role="alert">
+                        {data.errors.required && <p className={styles.error} dangerouslySetInnerHTML={{ __html: allRules.requirement.mes }} />}
+                        {data.errors.min && <p className={styles.error} dangerouslySetInnerHTML={{ __html: allRules.min.mes }} />}
+                        {data.errors.max && <p className={styles.error} dangerouslySetInnerHTML={{ __html: allRules.max.mes }} />}
+                    </div>
+                }
 
             </div>
         </div>

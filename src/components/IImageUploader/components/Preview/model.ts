@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { UseModelReturnType, Position, Rotate, SavedData } from "./types";
 import { params, initialRotate } from "./data";
 
-const useModel = (rotateable: boolean, mirrorable: boolean): UseModelReturnType => {
+const useModel = (rotateable: boolean, mirrorable: boolean, onClose: () => void): UseModelReturnType => {
 
     const [position, setPosition] = useState<Position>({ x: 0, y: 0, });
     const [dragging, setDragging] = useState<boolean>(false);
@@ -15,7 +15,7 @@ const useModel = (rotateable: boolean, mirrorable: boolean): UseModelReturnType 
         setMirrored((prev) => !prev);
         resetPosition();
     };
-    
+
     const resetMirror = (): void => setMirrored(false);
     //end-mirror
 
@@ -115,6 +115,23 @@ const useModel = (rotateable: boolean, mirrorable: boolean): UseModelReturnType 
         });
     };
     // end-zoom
+
+    // esc-btn
+    useEffect(() => {
+        const handleEsc = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                onClose();
+                resetOnClose();
+            }
+        };
+
+        document.addEventListener("keydown", handleEsc);
+
+        return () => {
+            document.removeEventListener("keydown", handleEsc);
+        };
+    }, [onClose]);
+    // end-esc-btn
 
     return {
         zoom,

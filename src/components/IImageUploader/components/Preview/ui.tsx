@@ -32,10 +32,10 @@ const UI = ({
         getSavedData,
         mirrored,
         handleMirror
-    } = useModel(!!rotateable, !!mirrorable);
+    } = useModel(!!rotateable, !!mirrorable, onClose);
 
     return (
-        <div onWheel={handleWheel} className={`${styles.container} ${show ? styles.show : ''}`}>
+        <div role="dialog" aria-modal="true" onWheel={handleWheel} className={`${styles.container} ${show ? styles.show : ''}`}>
 
             <div className={`${styles.header}`}>
 

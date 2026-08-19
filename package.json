@@ -1,8 +1,23 @@
 {
   "name": "i-img-uploader",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A reusable Image Uploader component for React",
+  "license": "MIT",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/i-img-uploader.umd.js",
+  "module": "./dist/i-img-uploader.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/i-img-uploader.es.js",
+      "require": "./dist/i-img-uploader.umd.js"
+    },
+    "./dist/style.css": "./dist/i-img-uploader.css"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -25,6 +40,7 @@
     "globals": "^17.7.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.65.0",
-    "vite": "^8.2.0"
+    "vite": "^8.2.0",
+    "vite-plugin-dts": "^5.0.3"
   }
 }
