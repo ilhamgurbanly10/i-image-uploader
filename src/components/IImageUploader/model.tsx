@@ -1,4 +1,4 @@
-import { useRef, useMemo, useState, useCallback } from "react";
+import { useRef, useMemo, useState, useCallback, useId } from "react";
 import type { ModelReturnedData, ModelProps, Options, Translates, Images, PreviewImg, Rules, Errors } from "./types";
 import { initialOptions, initialRules, initialErrors } from "./data";
 import { defaultTranslates } from "./translates";
@@ -7,9 +7,8 @@ import type { SavedData } from "./components/Preview/types";
 
 const useModel = ({ options, translates, data, rules }: ModelProps): ModelReturnedData => {
 
-    console.log(data, 'myData')
     const imgInputRef = useRef<HTMLInputElement>(null);
-
+    const id: string  = useId();
     // preview
     const [previewImg, setPreviewImg] = useState<PreviewImg>(null);
 
@@ -158,7 +157,8 @@ const useModel = ({ options, translates, data, rules }: ModelProps): ModelReturn
         allRules,
         isRequired,
         imgIsLoaded,
-        handlePreviewSave
+        handlePreviewSave, 
+        id
     }
 
 }

@@ -1,10 +1,10 @@
 import { useMemo } from 'react'
 import './App.css'
-import IImageUploader, { useIImageUploaderImages, type IImageUploaderOptions, type IImageUploaderTranslates, type IImageUploaderRules } from './components/IImageUploader';
+import IImageUploader, { useIImageUploaderData, type IImageUploaderOptions, type IImageUploaderTranslates, type IImageUploaderRules } from './components/IImageUploader';
 
 function App() {
 
-  const imagesData = useIImageUploaderImages();
+  const imagesData = useIImageUploaderData();
 
   const options = useMemo<IImageUploaderOptions>(() => {
     return {

@@ -1,5 +1,12 @@
 import { default as IImageUploader } from "./ui";
-import useImages from "./images";
-export { useImages as useIImageUploaderImages };
-export type { Options as IImageUploaderOptions, Translates as IImageUploaderTranslates, Rules as IImageUploaderRules } from "./types"
+import useData from "./dataHook";
+export { useData as useIImageUploaderData };
+export type { 
+    Options as IImageUploaderOptions, 
+    Translates as IImageUploaderTranslates, 
+    Rules as IImageUploaderRules, 
+    DataReturnedData as IImageUploaderDataReturnedData, 
+    Images as IImageUploaderImages, 
+    Errors as IImageUploaderErrors
+} from "./types"
 export default IImageUploader;

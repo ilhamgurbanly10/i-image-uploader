@@ -14,8 +14,8 @@ export const initialOptions: Required<Options> = {
 
 export const initialRules: Required<Rules> = {
     requirement: {
-        isRequired: true,
-        mes: 'This field is required'
+        isRequired: false,
+        mes: ''
     },
     min: {
         limit: null,

@@ -39,16 +39,17 @@ export interface Limit {
 }
 
 export interface Props {
-    data: ImagesReturnedData;
+    data: DataReturnedData;
     options?: Options;
     translates?: Translates;
     rules?: Rules;
+    className?: string;
 }
 
 export interface ModelProps {
     options?: Options;
     translates?: Translates;
-    data: ImagesReturnedData;
+    data: DataReturnedData;
     rules?: Rules;
 }
 
@@ -67,9 +68,10 @@ export interface ModelReturnedData {
     isRequired: boolean;
     imgIsLoaded: (id: string) => void;
     handlePreviewSave: (data: SavedData) => void;
+    id: string;
 }
 
-export interface ImagesReturnedData {
+export interface DataReturnedData {
     images: Images;
     setImages: Dispatch<SetStateAction<Images>>;
     errors: Errors;
